@@ -493,7 +493,7 @@ function BlogList() {
           {filteredPosts.map(post => (
             <article
               key={post.id}
-              className="blog-post-card bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-orange-500/50 card-hover"
+              className="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-orange-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/10"
             >
               <div className="flex items-center gap-4 text-sm text-gray-400 mb-3">
                 <span className="flex items-center gap-1">
