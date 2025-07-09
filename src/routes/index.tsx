@@ -271,7 +271,7 @@ function Home() {
       <div className="flex flex-col flex-1">
         {!isAnthropicKeyDefined && (
           <div className="w-full max-w-3xl px-2 py-2 mx-auto mt-4 mb-2 font-medium text-center text-white bg-orange-500 rounded-md text-sm">
-            <p>This app requires an Anthropic API key to work properly. Update your <code>.env</code> file or get a <a href='https://console.anthropic.com/settings/keys' className='underline'>new Anthropic key</a>.</p>
+            <p>This app requires an Anthropic API key to work properly. Update your <code>.env</code> file or get a <a href='https://console.anthropic.com/settings/keys' className=\'underline'>new Anthropic key</a>.</p>
             <p>For local development, use <a href='https://www.netlify.com/products/dev/' className='underline'>netlify dev</a> to automatically load environment variables.</p>
           </div>
         )}
