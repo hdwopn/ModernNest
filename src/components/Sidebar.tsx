@@ -41,7 +41,7 @@ export const Sidebar = ({
       {conversations.map((chat) => (
         <div
           key={chat.id}
-          className={`group flex items-center gap-3 px-3 py-2 cursor-pointer hover:bg-gray-700/50 ${
+          className={`group flex items-center gap-3 px-3 py-2 cursor-pointer hover:bg-gray-700/50 transition-all duration-200 ${
             chat.id === currentConversationId ? 'bg-gray-700/50' : ''
           }`}
           onClick={() => setCurrentConversationId(chat.id)}
@@ -83,7 +83,7 @@ export const Sidebar = ({
                 setEditingChatId(chat.id)
                 setEditingTitle(chat.title)
               }}
-              className="p-1 text-gray-400 hover:text-white"
+              className="p-1 text-gray-400 hover:text-white transition-colors"
             >
               <Edit2 className="w-3 h-3" />
             </button>
@@ -92,7 +92,7 @@ export const Sidebar = ({
                 e.stopPropagation()
                 handleDeleteChat(chat.id)
               }}
-              className="p-1 text-gray-400 hover:text-red-500"
+              className="p-1 text-gray-400 hover:text-red-500 transition-colors"
             >
               <Trash2 className="w-3 h-3" />
             </button>

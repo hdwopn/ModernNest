@@ -1,4 +1,5 @@
 import { Send } from 'lucide-react';
+import { Link } from '@tanstack/react-router';
 
 interface WelcomeScreenProps {
   input: string;
@@ -22,6 +23,16 @@ export const WelcomeScreen = ({
         You can ask me about anything, I might or might not have a good
         answer, but you can still ask.
       </p>
+      
+      <div className="mb-6">
+        <Link
+          to="/blog"
+          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-orange-500 border border-orange-500/20 rounded-lg hover:bg-orange-500/10 transition-all duration-200"
+        >
+          Read our blog for tips and tutorials
+        </Link>
+      </div>
+      
       <form onSubmit={handleSubmit}>
         <div className="relative max-w-xl mx-auto">
           <textarea

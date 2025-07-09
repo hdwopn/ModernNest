@@ -1,13 +1,15 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useEffect, useState, useRef, useCallback, useMemo } from 'react'
-import { Settings } from 'lucide-react'
+import { Settings, BookOpen } from 'lucide-react'
+import { Link } from '@tanstack/react-router'
 import { 
   SettingsDialog, 
   ChatMessage, 
   LoadingIndicator, 
   ChatInput, 
   Sidebar, 
-  WelcomeScreen 
+  WelcomeScreen,
+  Navigation
 } from '../components'
 import { useConversations, useAppState, store, actions } from '../store'
 import { genAIResponse, type Message } from '../utils'
@@ -232,11 +234,20 @@ function Home() {
 
   return (
     <div className="relative flex h-screen bg-gray-900">
+      {/* Navigation */}
+      <Navigation currentPath="/" />
+
       {/* Settings Button */}
-      <div className="absolute z-50 top-5 right-5">
+      <div className="absolute z-40 top-5 right-5 flex gap-2">
+        <Link
+          to="/blog"
+          className="flex items-center justify-center w-10 h-10 text-white transition-all duration-200 rounded-full bg-gray-800/80 backdrop-blur-sm hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-600 focus:outline-none focus:ring-2 focus:ring-orange-500"
+        >
+          <BookOpen className="w-5 h-5" />
+        </Link>
         <button
           onClick={() => setIsSettingsOpen(true)}
-          className="flex items-center justify-center w-10 h-10 text-white transition-opacity rounded-full bg-gradient-to-r from-orange-500 to-red-600 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-orange-500"
+          className="flex items-center justify-center w-10 h-10 text-white transition-all duration-200 rounded-full bg-gray-800/80 backdrop-blur-sm hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-600 focus:outline-none focus:ring-2 focus:ring-orange-500"
         >
           <Settings className="w-5 h-5" />
         </button>
